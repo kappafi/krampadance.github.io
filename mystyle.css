@@ -1,0 +1,102 @@
+#main
+{
+	height: 100%;
+    margin: 0;
+    top: 0;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
+
+#menu
+{
+position:absolute;
+top:0px;
+left:0px;
+bottom:0px;
+margin-left:0px;
+margin-top:0px;
+background-color: #db7d96;
+width:310px;
+float:left;
+display:block;
+overflow:auto;
+height:100%
+}
+
+#map {
+
+width:82%;
+height:auto;
+position:absolute;
+top:0px;
+float:left;
+left:310px;
+bottom:0px;
+margin-left:0px;
+margin-top:0px;
+border: 2px black;
+z-index:100;
+}
+
+#accordion
+{
+	background: #db7d96;
+    color: #a4c3f5;
+}
+
+#accordion h3
+{
+	background: #9b1c70;
+    color: #ffffe6;
+	font-family:Century Gothic;
+	font-size:20px;
+	font-weight:Bold;
+}
+
+#para1
+{
+	font-family:Century Gothic;
+	font-size:15px;
+	text-align: center;
+}
+
+#para2
+{
+	font-family:Century Gothic;
+	font-size:18px;
+	font-weight:bold;
+	text-align:center;
+}
+#link
+{
+	color: blue;
+}
+
+#years
+{
+	font-family:Century Gothic;
+	font-size:17px;
+	font-weight:bold;
+	color:#9b1c70;
+}
+
+#legend
+{
+	text-align:center;
+	font-family:Century Gothic;
+	font-size:14px;
+}
+
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}

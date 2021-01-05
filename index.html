@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Airbnb in Athens</title>
+    <meta charset="utf-8" />
+	
+	<!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+   <!--jquery -->
+   <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+   <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+   <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+   <link rel="stylesheet" href="/resources/demos/style.css">
+   
+   <!-- CSS -->
+   <link rel="stylesheet" href="mystyle.css" type="text/css">
+   
+   <!-- GeoJSON layer -->
+   <script src="airbnb.js"></script>
+
+</head>
+
+<body>	
+
+<div id="main" name="main">
+
+    <div id="menu" name="menu">
+	
+	    <div id="accordion">
+		
+		<!--1η καρτέλα του πλαϊνού μενού ==================================================================== -->
+		<h3><b>--Airbnb in Athens--</b></h3>
+		<div><p id="para1">Σε αυτό τον χάρτη αποτυπώνεται η διαχρονική εξέλιξη των καταλυμάτων Airbnb στις γειτονιές της Αθήνας.Τα δεδομένα που χρησιμοποιήθηκαν αφορούν στο μήνα Ιούλιο των ετών 2015,2017,2018,2019 και 2020.
+		Τα χαρακτηριστικά που μπορεί να οπτικοποιήσει ο κάθε χρήστης είναι το <b>πλήθος των καταλυμάτων</b> ανά χρονιά, η <b>μεταβολή του πλήθους για διαδοχικές χρονιές</b> καθώς και η <b>μέση τιμή διανυκτέρευσης</b>.<br></br><i>πηγή δεδομένων: </i><a id="link" href="http://insideairbnb.com/">insideairbnb.com</a></p>
+
+
+		
+		</div>
+		
+		<!--2η καρτέλα του πλαϊνού μενού ==================================================================== -->
+		<h3><b>Πλήθος καταλυμάτων</b></h3>
+		<div><input type="radio" name="style" id="Style1" checked />
+             <label for="Style1" id="years">2015</label><br></br>
+             <input type="radio" name="style" id="Style2" />
+             <label for="Style2" id="years">2017</label><br></br>
+			 <input type="radio" name="style" id="Style3" />
+             <label for="Style3" id="years">2018</label><br></br>
+			 <input type="radio" name="style" id="Style4" />
+             <label for="Style4" id="years">2019</label><br></br>
+			 <input type="radio" name="style" id="Style5" />
+             <label for="Style5" id="years">2020</label>
+			 <p id="para2">Υπόμνημα</p>
+			 <table id="legend"><tr><td style="text-align: center;"><img src="legend1/neighbourhood_ALL_0_0600.png" /></td><td>0 - 60 </td></tr><tr>
+			 <td style="text-align: center;"><img src="legend1/neighbourhood_ALL_0_601951.png" /></td><td>60 - 195 </td></tr><tr>
+			 <td style="text-align: center;"><img src="legend1/neighbourhood_ALL_0_1955072.png" /></td><td>195 - 507 </td></tr><tr>
+			 <td style="text-align: center;"><img src="legend1/neighbourhood_ALL_0_5079663.png" /></td><td>507 - 966 </td></tr><tr>
+			 <td style="text-align: center;"><img src="legend1/neighbourhood_ALL_0_96619274.png" /></td><td>966 - 1927 </td></tr></table>
+			 </div>
+		
+		<!--3η καρτέλα του πλαϊνού μενού ==================================================================== -->
+		<h3><b>Μεταβολή πλήθους καταλυμάτων</b></h3>
+		<div><input type="radio" name="style" id="Style6" />
+             <label for="Style6" id="years">2015-2017</label><br></br>
+			 <input type="radio" name="style" id="Style7" />
+             <label for="Style7" id="years">2017-2018</label><br></br>
+			 <input type="radio" name="style" id="Style8" />
+             <label for="Style8" id="years">2018-2019</label><br></br>
+			 <input type="radio" name="style" id="Style9" />
+             <label for="Style9" id="years">2019-2020</label>
+			 <p id="para2">Υπόμνημα</p>
+			 <table id="legend"><tr><td style="text-align: center;"><img src="legend2/neighbourhood_ALL_0_150500.png" /></td><td>-150 - -50 % </td></tr><tr>
+			 <td style="text-align: center;"><img src="legend2/neighbourhood_ALL_0_5001.png" /></td><td>-50 - 0 % </td></tr><tr>
+			 <td style="text-align: center;"><img src="legend2/neighbourhood_ALL_0_0332.png" /></td><td>0 - 33 % </td></tr><tr>
+			 <td style="text-align: center;"><img src="legend2/neighbourhood_ALL_0_33673.png" /></td><td>33 - 67 % </td></tr><tr>
+			 <td style="text-align: center;"><img src="legend2/neighbourhood_ALL_0_671004.png" /></td><td>67 - 100 % </td></tr></table>
+			 </div>
+		
+		<!--4η καρτέλα του πλαϊνού μενού ==================================================================== -->
+		<h3><b>Μέση τιμή διανυκτέρευσης</b></h3>
+		<div><input type="radio" name="style" id="Style10" />
+             <label for="Style10" id="years">2015</label><br></br>
+			 <input type="radio" name="style" id="Style11" />
+             <label for="Style11" id="years">2017</label><br></br>
+			 <input type="radio" name="style" id="Style12" />
+             <label for="Style12" id="years">2018</label><br></br>
+			 <input type="radio" name="style" id="Style13" />
+             <label for="Style13" id="years">2019</label><br></br>
+			 <input type="radio" name="style" id="Style14" />
+             <label for="Style14" id="years">2020</label>
+			 <p id="para2">Υπόμνημα</p>
+			 <table id="legend"><tr><td style="text-align: center;"><img src="legend/neighbourhood_ALL_0_0440.png" /></td>
+			 <td>0 - 44 &#8364</td></tr><tr><td style="text-align: center;"><img src="legend/neighbourhood_ALL_0_44701.png" /></td>
+			 <td>44 - 70 &#8364</td></tr><tr><td style="text-align: center;"><img src="legend/neighbourhood_ALL_0_701002.png" /></td>
+			 <td>70 - 100 &#8364</td></tr><tr><td style="text-align: center;"><img src="legend/neighbourhood_ALL_0_1001363.png" /></td>
+			 <td>100 - 136 &#8364</td></tr><tr><td style="text-align: center;"><img src="legend/neighbourhood_ALL_0_1362844.png" /></td>
+			 <td>136 - 284 &#8364</td></tr></table>
+			 </div>
+			 
+		</div>
+		<div>
+	</div>
+	</div>
+    <div id="map"</div>
+</div>
+
+<script type='text/javascript' src='geo.js'></script>
+
+</body>
+</html>
